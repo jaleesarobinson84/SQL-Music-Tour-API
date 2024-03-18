@@ -9,8 +9,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 // DATABASE
-const { sequelize } = require('./models')
-// const sequelize = new Sequelize(process.env.DB_Connection)
+const sequelize = new Sequelize(process.env.DB_Connection)
 const testSequelize = async () => {
 try {
     await sequelize.authenticate();
