@@ -1,18 +1,23 @@
 // DEPENDENCIES
+require('dotenv').config()
 const express = require('express')
 const { Sequelize } = require('sequelize')
 const app = express()
 
 // CONFIGURATION / MIDDLEWARE
-require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 // DATABASE
- if (config.use_env_variable) {
-    sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-sequelize = new Sequelize(config.database, config.username, config.password, config);
+const { sequelize } = require('./models')
+// const sequelize = new Sequelize(process.env.DB_Connection)
+const testSequelize = async () => {
+try {
+    await sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
 }
 
 
@@ -25,5 +30,6 @@ app.get('/', (req, res) => {
 
 // LISTEN
 app.listen(process.env.PORT, () => {
+    testSequelize()
     console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
 })
