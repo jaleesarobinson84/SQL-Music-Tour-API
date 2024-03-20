@@ -1,34 +1,16 @@
 'use strict';
+
+const { DataTypes } = require('sequelize');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Bands', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      firstName: {
-        type: Sequelize.STRING
-      },
-      totalMembers: {
-        type: Sequelize.INTEGER
-      },
-      genre: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.addColumn('bands', 'recommendation', {
+        type: DataTypes.STRING
+    })
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Bands');
+
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.removeColumn('bands', 'recommendation')
   }
-};
+}                
