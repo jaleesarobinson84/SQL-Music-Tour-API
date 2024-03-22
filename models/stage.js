@@ -12,11 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ Event, stage_event}) {
       // define association here
       // events
-      Stage.belongsToMany(Event, {
-        foreignKey: "stage_id",
-        as: "events",
-        through: stage_event
-      })
+      // Stage.belongsToMany(Event, {
+      //   foreignKey: "stage_id",
+      //   as: "events",
+      //   through: stage_event
+      // })
     }
   }
   Stage.init({
@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Stage',
+    tableName: 'stages',
   });
   return Stage;
 };

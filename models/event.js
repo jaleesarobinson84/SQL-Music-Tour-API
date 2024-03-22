@@ -12,13 +12,13 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({Event, Stage, stage_event}) {
+    static associate({Event, Stage, StageEvent}) {
       // define association here
-      Event.belongsToMany(Stage, {
-        foreignKey: "event_id",
-        as: "stages",
-        through: stage_event
-      })
+      // Event.belongsToMany(Stage, {
+      //   foreignKey: "event_id",
+      //   as: "stages",
+      //   through: StageEvent
+      // })
     }
   }
   Event.init({
@@ -37,6 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Event',
+    tableName: 'events'
   });
   return Event;
 };
