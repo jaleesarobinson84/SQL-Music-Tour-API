@@ -20,7 +20,7 @@ try {
 }
 
 // CONTROLLERS
-const bandsController = require('./controllers/bands_controller')
+const bandsController = require('./controllers/bands_controller');
 app.use('/bands', bandsController)
 
 // ROOT

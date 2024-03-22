@@ -12,6 +12,14 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+    await queryInterface.bulkInsert('stages', [
+      { name: 'Proscenium', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Flexible', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Traverse', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Platform', createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Hippodromes', createdAt: new Date(), updatedAt: new Date() },
+     
+  ], {});
   },
 
   async down (queryInterface, Sequelize) {
@@ -21,5 +29,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('stages', null, {});
   }
 };
