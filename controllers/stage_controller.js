@@ -20,12 +20,15 @@ stages.get('/', async (req, res) => {
 });
 
 // FIND A SPECIFIC STAGE - SHOW ROUTE
-stages.get('/:id', async (req, res) => {
+sstages.get('/:id', async (req, res) => {
     try {
         const foundStage = await Stage.findOne({
             where: { id: req.params.id },
             include: [
-                { model: Stage }
+                {
+                    model: Event,
+                    as: 'events' // Assuming the association name between Stage and Event is 'events'
+                }
             ]
         });
         res.status(200).json(foundStage);

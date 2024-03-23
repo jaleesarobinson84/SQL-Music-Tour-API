@@ -28,11 +28,11 @@ events.get('/:id', async (req, res) => {
             include: [{
                 model: Stage,
                 as: 'stage',
-                include: {
+                include: [{
                     model: Event,
                     as: 'band',
                     where: { name: { [Op.like]: `%${req.query.event || ''}%` } }
-                }
+                }]
             }]
         });
         res.status(200).json(foundEvent);
