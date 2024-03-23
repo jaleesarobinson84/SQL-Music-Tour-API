@@ -13,10 +13,11 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('events', [
-      { name: 'TechSpark Summit', start: new Date('2024-04-02 09:00:00'), end: new Date('2024-04-06 21:55:00') , createdAt:new Date(), updatedAt: new Date() },
-      { name: 'Groove Gala Music Festival', start: new Date('2024-08-27 11:30:00'), end: new Date('2024-09-15 23:55:00'), createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Beats Bash Summer Jam', start: new Date('2024-07-02 10:45:00'), end: new Date('2024-04-06 22:50:00'), createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Mashup Jam Fest', start: new Date('2025-06-02 11:30:42'), end: new Date('2024-06-11 23:30:00'), createdAt: new Date(), updatedAt: new Date() },
+      { id: '1', stage: 'Proscenium', band:'Black Keys' },
+      { id: '2', stage: 'Flexible', band:'Living Colour' },
+      { id: '3', stage: 'Traverse', band:'The Lox'},
+      { id: '4', stage: 'Hippodromes', band:'Black Sabbath' },
+      { id: '5', stage: 'Platform', band:'112'},
   ], {});
   },
 

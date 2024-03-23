@@ -20,14 +20,6 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      available_start_time: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
-      end_time: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      }
     })
   },
   down: async (queryInterface, Sequelize) => {

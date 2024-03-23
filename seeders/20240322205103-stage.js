@@ -13,11 +13,11 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('stages', [
-      { name: 'Proscenium', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Flexible', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Traverse', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Platform', createdAt: new Date(), updatedAt: new Date() },
-      { name: 'Hippodromes', createdAt: new Date(), updatedAt: new Date() },
+      { id:'6', name: 'Proscenium', createdAt: new Date(), updatedAt: new Date() },
+      { id:'7', name: 'Flexible', createdAt: new Date(), updatedAt: new Date() },
+      { id:'8', name: 'Traverse', createdAt: new Date(), updatedAt: new Date() },
+      { id:'9', name: 'Platform', createdAt: new Date(), updatedAt: new Date() },
+      { id:'10',name: 'Hippodromes', createdAt: new Date(), updatedAt: new Date() },
      
   ], {});
   },
